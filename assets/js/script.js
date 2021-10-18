@@ -1,3 +1,6 @@
+//variable for tasks object in javascript
+var tasks = [];
+//set current date at top of app
 $("#currentDay").text(moment().format("dddd, MMMM Do YYYY"))
 
 var appendLocalStorage = function() {
@@ -11,11 +14,10 @@ var appendLocalStorage = function() {
 
 var populateFromStorage = function() {
     for(i=6; i<18; i++) {
-        //var stringI = toString(i)
-        console.log(localStorage.getItem('i'))
-        if(localStorage.getItem('i')){
-            console.log("for if")
-            console.log(localStorage.getItem('i'))
+        // var stringI = toString(i)
+        var task = localStorage.getItem(i) || false
+        if(task){
+            $("#"+i).val(task)
         }
     }
 }
